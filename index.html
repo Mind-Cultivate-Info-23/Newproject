@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="#">
+                <h1>Sign Up</h1>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Join Us<img src="icons/right-arrow.png" alt=""></button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action="#">
+                <h1>Sign In</h1>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Log In<img src="icons/right-arrow.png" alt=""></button>
+            </form>
+        </div>
+
+        <!-- Toggle Features -->
+        
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-pannel toggle-right">
+                    <h2>Create Your <br> Account</h2>
+                    <p>Share your thoughts <br> where it matters</p>
+                    <div class="ref">
+                        <span class="to-login">Already have an account?</span>
+                        <button id="sign-in">Sign In</button>
+                    </div>
+                </div>
+                <div class="toggle-pannel toggle-left">
+                    <h2>Log into Your <br> Account</h2>
+                    <p>Share your thoughts <br> where it matters</p>
+                    <div class="ref">
+                        <span class="to-login">Don't have an account?</span>
+                        <button id="register">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+    
+</body>
+</html>
