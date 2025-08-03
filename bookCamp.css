@@ -1,0 +1,564 @@
+body{
+    
+    background-color:#ebf2fa;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+}
+.img{
+    user-select: none;
+    pointer-events: none;
+
+
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.container{
+    
+    background-color:#ffff;
+    user-select: none;
+    color:#000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 0.5fr 3fr 0.3fr;
+    gap: 5px;
+    
+    width: 90%;
+    min-width: 420px;
+    margin: 5px auto;
+    position: relative;
+}
+header{ 
+   grid-column: 2/ span 2;
+   grid-row: 1/ span 1;
+   
+   
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+  
+   
+   
+}
+.searchDiv{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+    position: relative;
+   
+   
+}
+.searchBtn{
+    height: 40px;
+    
+    
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #582707, #000);
+    color: #fff;
+    font-family: sans-serif;
+
+    position: absolute;
+    right: 0;
+}
+.searchBtn:hover{
+    opacity: 0.8;
+}
+.search{
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    align-self: flex-end;
+    border: 1px solid #582707;
+    border-radius:  20px;
+    caret-color: #582707;
+
+  
+}
+.search:focus{
+    outline: none;
+}
+.logoDiv{ 
+    width: 18%;
+    padding: 10px;
+    margin-left: 10px;
+    
+}
+.logoDiv>img{
+    width: 100%;
+    height: auto;
+}
+.user-info{
+   grid-column: 1/ span 1;
+   grid-row: 1/ span 3;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   
+}
+
+.profile-box{
+    align-self: baseline;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-box>img{
+    width: 60px;
+    height: auto;
+    clip-path: circle();
+}
+.profile-box>h3{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+
+.log-outBtn{
+    background-color: #582707;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 500;
+    width: 130px;
+    height: 45px;
+    
+    border: none;
+    border-radius: 5px;
+    
+    position: absolute;
+    left: 2rem;
+    bottom: 1.3rem;
+
+   
+
+}
+.log-outBtn>img{
+    transform: scale(0.45) rotate(180deg);
+    filter: brightness(0) invert(1);
+}
+.log-outBtn:hover{
+    opacity: 0.8;
+
+}
+.menu-area{  
+   grid-column: 3/ span 1;
+   grid-row: 2/ span 1;
+
+   
+}
+
+
+li{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    list-style: none;
+    margin-bottom: 20px;
+    
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 5px;
+    
+    
+}
+.menu-list:hover{
+    
+   border-right: 2px solid #582707;
+   
+    /*
+    background-color: hsla(0, 69%, 100%, 1);
+    box-shadow:  0 0 2px hsl(0, 0%, 50%);
+    */
+    
+}
+.user-actions>li{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+li>img{
+    width: 24px;
+    height: 24px;
+}
+.favourites{
+    display: relative;
+}
+.No-of-favorite-books{
+    display: none;
+}
+
+.display-No-favorite-books{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(233, 17, 17);
+    border-radius: 50%;
+    font-size: 7px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+
+    z-index: 100;
+}
+
+main{  
+ /*  background-color: #2d65e7; */
+   background-color: #582707;
+   grid-column: 2/ span 1;
+   grid-row: 2/ span 1;
+
+   display: grid;
+   grid-template-rows: 2.5em auto auto;
+   gap: 10px; 
+
+   padding: 10px;
+   height: h;
+}
+.main-title{
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;  
+}
+.book-collection-section, .trending-books-section{  
+    display: grid;
+    grid-template-rows: 30px auto 25px;
+    background-color: #fff;
+    
+    
+}
+.book-collection-section>h3, .trending-books-section>h3{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+.collectionDiv, .trendingBooksDiv{ 
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: hidden;
+    white-space: nowrap;
+
+
+
+}
+.collection, .trending-book{
+   
+    min-width: 110px;
+    height: 150px;
+    
+    
+    padding: 1px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    
+    box-shadow:  0 0 4px hsl(0, 0%, 50%);
+
+    
+}
+.collection>h4{
+    margin: 2px auto;
+    font-size: 13px;
+    font-weight: 600;
+}
+.collection>img{
+    width: 70%;
+    height: 60%;
+    margin: 1px auto;
+    border-radius: 3px;
+}
+.collection>img:hover{
+    transform: scale(1.05);
+    border-radius: 3px;
+}
+.trending-book>img{
+    width: 100%;
+    height: 75%;
+    border-radius: 5px 5px 0 0;
+    
+}
+.trending-book>label{
+    font-size: 9px; 
+    font-weight: 600;
+    display: none;
+    
+}
+.book-info{
+    
+    box-sizing: border-box;
+    border-radius: 0 0 5px 5px;
+    border-top: 0.5px solid rgb(146, 138, 138);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    padding: 3px;
+    height: 35%;
+
+    position: relative;
+}
+.viewDiv{
+    text-align: end;
+}
+.viewDiv>img{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    transform: scale(0.8);
+    
+}
+.viewDiv>img:hover{
+    opacity: 0.8;
+    
+}
+.authorNameDiv, .viewDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.authorNameDiv>label, .viewDiv>label{
+    font-size: 10px;
+    font-weight: 600;
+    
+}
+.view-btnBtn{
+    background-color: #582707;
+    border: none;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #fff;
+
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    
+}
+.view-btnBtn:hover{
+    opacity: 0.8;
+}
+.collection-swipe-arrows, .trending-swipe-arrows{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.collection-swipe-arrows>img, .trending-swipe-arrows>img{
+    transform: scale(0.7);
+}
+.collection-swipe-arrows>img:hover, .trending-swipe-arrows>img:hover{
+    opacity: 0.8;
+}
+
+footer{
+   grid-column: 2/ span 3;
+   grid-row: 3/ span 1;
+
+
+
+   
+}
+
+/* styling elemts that will be displayed after responding button click */
+
+/* 1. The favorite books lisk */
+
+.menuContainer{
+    display: none;
+    
+       
+}
+.display-menuContainer{
+
+    transform: translateX(0px);
+    transition: linear 1s;
+
+    box-sizing: border-box;
+
+    height: 93%;
+    width: 75%;
+    position: absolute;
+    top: 7%;
+    right: 12.5%;
+     
+
+    border-right: 5px solid #582707;
+    background-color: #fff;
+    box-shadow:  -1px -1px 2px hsl(0, 0%, 50%);
+        
+}
+.menuContainer-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 2px auto;
+}
+/* a class to show border to an active menu item */
+.active-menu-item{
+    
+    border-bottom: 2px solid #582707;
+    background-color: #582707;
+    color: #fff;
+    
+}
+.active-menu-item>img{
+    filter: brightness(0) invert(1);
+}
+
+.active-menu-item:hover{
+    border-right: 2px solid #000;
+}
+
+/* a button to close the favorite books container once opened */
+.close-menuBtn{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    
+    transform: scale(0.8);
+    border: none;
+    background-color: transparent;
+    
+   
+}
+.close-menuBtn:hover{
+filter: invert(16%) sepia(100%) saturate(7481%)  hue-rotate(342deg) brightness(92%) contrast(1015);
+}
+
+
+/* styles the apply to the favorite books container */
+.favorite-booksContainer{
+ /*   border: 1px solid #582707 ;  */
+    height: 80%;
+    width: 90%;
+    margin: 10px auto;
+
+   
+}
+.favorite-booksUl{
+    width: 100%;
+   
+
+    list-style-type: none;
+    list-style-position: inside;
+    padding: 0;
+    box-sizing: border-box;
+}
+.favorite-bookList{
+    background-color: grey;
+    background-color: #fff;
+    width: 100%;
+    height: 70px;
+
+    
+    box-sizing: border-box;
+   
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.favorite-book-object, .favorite-book-actions{
+    background-color: #fff;
+    
+
+    box-shadow:  0 0 3px 1px rgb(182, 174, 174);
+
+    border-radius: 5px;
+    width: 20%;
+    height: 100%;
+}
+.favorite-book-object, .favorite-book-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px;
+    box-sizing: border-box;
+}
+.fav-book-picDiv{
+    height: 95%;
+    width: 20%;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.fav-book-picDiv>img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.fav-book-info{
+    height: 95%;
+    width: 75%;
+    border: 1px solid grey;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    font-size: 9px;
+    line-height: 2px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.remove-favorite, .read-book{
+    background-color: transparent;
+    width: 45%;
+    height: 30px;
+    border: 1px solid rgb(219, 209, 209);
+    border-radius: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 85%;
+    color: rgb(47, 46, 46);
+}
+.read-book{
+    background-color: rgb(68, 241, 97);
+    color: #fff;
+    border: none;
+}
+h4{
+    color: rgb(47, 46, 46);
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width:400px){
+      container{
+         
+      }
+      menu{
+          
+      }
+      .log-outBtn{
+          width: 15%;
+      }
+}
