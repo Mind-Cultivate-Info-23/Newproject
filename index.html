@@ -8,22 +8,27 @@
 </head>
 <body>
 
+    <div class="error" id="error-el">
+        <!-- <img src="icons/close.png" class="close"> -->
+        <!-- <p class="error-msg">Error Message</p> -->
+    </div>
+
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form action="#">
                 <h1>Sign Up</h1>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="submit-btn">Join Us<img src="icons/right-arrow.png" alt=""></button>
+                <input type="text" placeholder="Name" required id="initName">
+                <input type="email" placeholder="Email" required id="initEmail">
+                <input type="password" placeholder="Password" required id="initPword">
+                <button type="submit" class="submit-btn" id="join-btn">Join Us<img src="icons/right-arrow.png" alt=""></button>
             </form>
         </div>
         <div class="form-container sign-in">
             <form action="#">
                 <h1>Sign In</h1>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="submit-btn">Log In<img src="icons/right-arrow.png" alt=""></button>
+                <input type="email" placeholder="Email" required id="login-email-el">
+                <input type="password" placeholder="Password" required id="login-pword-el">
+                <button type="submit" class="submit-btn" id="sign-btn">Log In<img src="icons/right-arrow.png" alt=""></button>
             </form>
         </div>
 
