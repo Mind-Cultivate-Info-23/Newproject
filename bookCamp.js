@@ -81,7 +81,7 @@ function addFavoriteBook(){
         element.addEventListener('click',(e)=>{
     
             if(element.src.includes('heart.png')){
-                element.src ='favorite2.png';
+                element.src ='icons/favorite2.png';
                 
                 favoriteBooks.push('favorite2.png')
 
@@ -101,7 +101,7 @@ function addFavoriteBook(){
                 element.style.position='absolute'
             }
             else{
-                element.src ='heart.png';
+                element.src ='icons/heart.png';
                 
                 favoriteBooks.shift('favorite2.png');
                 if(favoriteBooks.length<1){
