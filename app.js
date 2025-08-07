@@ -170,7 +170,29 @@ function dataVerification() {
         console.log(emailExists, pwordExists)
 
         if (emailExists && pwordExists) {
-            
+            window.location.assign("bookCamp.html")
+        }else{
+            errorEl.style.display = 'block'
+
+            closeIcon = document.createElement('img')
+            closeIcon.src = "icons/close.png"
+            closeIcon.setAttribute('class', 'close')
+            errorEl.appendChild(closeIcon)
+            closeIcon.addEventListener('click', () => {
+                errorEl.remove()
+            })
+
+            text = document.createElement('p')
+            text.setAttribute('class', 'error-msg')
+            text.textContent = `Oops! seems you are not yet sign-up with
+                                us yet. Create your account to enjoy the 
+                                experience.`
+            errorEl.appendChild(text)
+
+            setTimeout(() => {
+                errorEl.style.display = 'none'
+            }, 3000);
+
         }
     }else {
         errorEl.style.display = 'block'
