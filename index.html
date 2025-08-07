@@ -8,6 +8,11 @@
 </head>
 <body>
 
+    <div class="error" id="error-el">
+        <!-- <img src="icons/close.png" class="close"> -->
+        <!-- <p class="error-msg">Error Message</p> -->
+    </div>
+
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form action="#">
@@ -21,8 +26,8 @@
         <div class="form-container sign-in">
             <form action="#">
                 <h1>Sign In</h1>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
+                <input type="email" placeholder="Email" required id="login-email-el">
+                <input type="password" placeholder="Password" required id="login-pword-el">
                 <button type="submit" class="submit-btn" id="sign-btn">Log In<img src="icons/right-arrow.png" alt=""></button>
             </form>
         </div>
