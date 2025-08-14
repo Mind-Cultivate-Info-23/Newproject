@@ -462,15 +462,21 @@ filter: invert(16%) sepia(100%) saturate(7481%)  hue-rotate(342deg) brightness(9
 .favorite-booksUl{
     width: 100%;
    
+    
 
     list-style-type: none;
     list-style-position: inside;
     padding: 0;
     box-sizing: border-box;
+    max-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
 }
 .favorite-bookList{
     background-color: grey;
-    background-color: #fff;
+    
     width: 100%;
     height: 70px;
 
@@ -495,7 +501,7 @@ filter: invert(16%) sepia(100%) saturate(7481%)  hue-rotate(342deg) brightness(9
 .favorite-book-object, .favorite-book-actions{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 
     padding: 5px;
@@ -514,18 +520,22 @@ filter: invert(16%) sepia(100%) saturate(7481%)  hue-rotate(342deg) brightness(9
 }
 .fav-book-info{
     height: 95%;
-    width: 75%;
-    border: 1px solid grey;
+     box-sizing: border-box;
+
+    border-left: 1px solid grey;
+    margin-left: 5px;
+    padding-left: 5px;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
+  
+    font-size: 11px;
+    font-family: monospace;
+    font-weight: 600;
 
-    font-size: 9px;
-    line-height: 2px;
-    font-weight: 400;
-    font-family: Arial, Helvetica, sans-serif;
+
 }
 .remove-favorite, .read-book{
     background-color: transparent;
@@ -542,6 +552,10 @@ filter: invert(16%) sepia(100%) saturate(7481%)  hue-rotate(342deg) brightness(9
     background-color: rgb(68, 241, 97);
     color: #fff;
     border: none;
+    margin-right: 5px;
+}
+.remove-favorite:hover, .read-book:hover{
+    opacity: 0.8 ;
 }
 h4{
     color: rgb(47, 46, 46);
@@ -552,12 +566,13 @@ h4{
 
 
 @media screen and (max-width:400px){
-      container{
+     /* container{
          
       }
       menu{
           
       }
+      */
       .log-outBtn{
           width: 15%;
       }
