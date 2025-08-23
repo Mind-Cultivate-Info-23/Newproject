@@ -346,10 +346,10 @@
         <side class="menu-area" id="menu-area">
             <ul>
                 <li class="menu-list  my-library" data-target="my-library"><img src="icons/library.png"> My Library</li>
-                <li class="menu-list note-review" data-target="note-review"><img src="icons/notes.png">Note Review</li>
+            <li class="menu-list note-review" data-target="note-review"><img src="icons/notes.png">Notes</li>
                 <li class="menu-list discussions" data-target="discussions"><img src="icons/groupChat.png">Discussions</li>
                 <li class="menu-list private-chat" data-target="private-chat"><img src="icons/chat-icon.png">Private Chat</li>
-                <li class="menu-list new-records" data-target="new-records"><img src="icons/notes.png">New Records</li>
+             <!--   <li class="menu-list new-records" data-target="new-records"><img src="icons/notes.png">New Records</li> -->
                 <li class="menu-list favorites" data-target="favorites"><div class="No-of-favorite-books" id="No-of-favorite-books" ></div><img src="icons/favorite.png">Fovourites</li>
             </ul>
 
@@ -371,6 +371,9 @@
                         <h4>Notes</h4>
                         <button class="close-menuBtn" data-target="note-review" ><img src="icons/close-icon.png"></button>
                     </div>
+                    
+                    <button class="add-notes-btn" id="add-notes"><img src="icons/notes-pen.ico">Add notes</button>
+
                 </div>
 
 
@@ -389,16 +392,50 @@
                         <h4>Chats</h4>
                         <button class="close-menuBtn" data-target="private-chat"  ><img src="icons/close-icon.png"></button>
                     </div>
-                </div>
 
-        <!-- 1 The container for New Records menu -->
-                <div class="menuContainer" id="new-records">
-                    <div class="menuContainer-header">
-                        <h4>Records</h4>
-                        <button class="close-menuBtn" data-target="new-records"  ><img src="icons/close-icon.png"></button>
+                    
+                    <div class="chats-container" id="chats-container">
+                        <ul class="chats-Ul" id="chats-Ul">
+
+                            <!--The chat list-->
+                                <!-- first -->
+                           <li class="chat-list">
+                               <div class="chat-img-div">
+                                <img src="images/mac.jpg">
+                               </div>
+                               <div class="chat-infor">
+                                <span class="name">Ray Programmer </span>
+                                <span class="msg-time">11:30</span>
+                               </div>
+                           </li>
+
+                                <!-- first -->
+                                <li class="chat-list">
+                                    <div class="chat-img-div">
+                                     <img src="images/dog.jpg">
+                                    </div>
+                                    <div class="chat-infor">
+                                        <span class="name">Ismart Kaunda</span>
+                                        <span class="msg-time">17:30</span>
+                                    </div>
+                                </li> 
+                                
+                                <li class="chat-list">
+                                    <div class="chat-img-div">
+                                     <img src="images/smart.jpg">
+                                    </div>
+                                    <div class="chat-infor">
+                                        <span class="name">Chisome Mhango</span>
+                                        <span class="msg-time">17:30</span>
+                                    </div>
+                                </li> 
+                        </ul>
+
                     </div>
 
+
                 </div>
+
 
 
         <!-- 6 the container for Favarite-books menu  -->
@@ -429,7 +466,7 @@
         <footer class="footer" id="footer">
            
         </footer>
-    </div>
+    </button>
 
    
 </body>
