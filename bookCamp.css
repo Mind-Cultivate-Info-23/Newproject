@@ -158,7 +158,7 @@ header{
 }
 
 
-li{
+.menu-list{
    
     display: flex;
     flex-direction: column;
@@ -382,14 +382,11 @@ footer{
    
 }
 
-/* styling elemts that will be displayed after responding button click */
+/* styling elemts that will be displayed after corresponding button click */
 
-/* 1. The favorite books lisk */
 
 .menuContainer{
-    display: none;
-    
-       
+    display: none;   
 }
 .display-menuContainer{
 
@@ -408,6 +405,8 @@ footer{
     border-right: 5px solid #582707;
     background-color: #fff;
     box-shadow:  -1px -1px 2px hsl(0, 0%, 50%);
+
+    
         
 }
 .menuContainer-header{
@@ -448,9 +447,228 @@ footer{
 .close-menuBtn:hover{
 filter: invert(16%) sepia(100%) saturate(7481%)  hue-rotate(342deg) brightness(92%) contrast(1015);
 }
+/* styles that apply to note review container*/
+.add-notes-btn.hide{
+    display: none;
+}
+.add-notes-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 32px;
+   
+    position: absolute;
+    right: 20px;
+}
+.notes-chapter-div{
+    display: none;
+}
+.show-notes-chapter-div{
+    width:200px;
+    height: 100px;
+    border: 1.5px solid #582707;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #4e3c30;
+
+    margin: 20% auto;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: content-box;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #fff;
+    position: sticky;
+    bottom: 50%;
+    z-index: 20;
+}
+.show-notes-chapter-div>input{
+    height: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 3px;
+    outline: none;
+
+    background-color: #f0e6e0;
+    border-bottom: 1px solid #582707;
+}
+.show-notes-chapter-div>input:hover{
+    outline: none;
+}
+.notes-chapeterBtns-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+    box-sizing: border-box;
+}
+.notes-chapeterBtns-div>button{
+    width: 35%;
+    box-sizing: content-box;
+    border: 1px solid #4e3c30;
+    height: 25px;
+    border-radius: 3px;
+     box-sizing: border-box;
+}
+.notes-chapeterBtns-div>.create-notes-btn{
+    background-color: #582707;
+    color: #fff;
+    border: none;
+}
+.notesUl.hide{
+    display: none;
+}
+.notesDiv{
+    width: 80%;
+    height: 80%;
+    
+
+    position: fixed;
+    left: 42px;
+    z-index: 10;
+}
+.notesDiv>span{
+   margin: 10px;
+   font-size: 0.8rem;
+   font-weight: 500;
+   
+}
+.note-title.hide{
+    display: none;
+}
+.note-title{
+    background-color: rgb(184, 179, 179);
+    width: 100%;
+    min-height: 25px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    text-align: left;
+    padding-left: 5px;
+    margin: 5px;
+
+    transform: translateX(-35px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.note-title>span{
+    font-size: 0.9rem;
+}
+.note-title>button{
+    width: 28px;
+    height: 30px;
+    background-color: rgb(206, 50, 50);
+    border-radius:3px ;
+    border: none;
+}
+.note-title>button:hover{
+    background-color: #fff;
+    border: 1px solid grey;
+}
+/* the div element ontowhich notes will be written */
+.notes-headingDiv{
+    display: none;
+}
+.notes-headingDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+notes-heading{
+    font-size: 10px;
+}
+.back-to-notes{
+    display: none;
+}
+.back-to-notes.active{
+    display: block;
+    width: fit-content;
+    height: 20px;
+    box-sizing: border-box;
+    margin-right: 5px;
+    background-color: transparent;
+    
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: none;
+    padding: 0;
+}
+.back-to-notes.active:hover{ 
+    background-color:  rgb(129, 120, 120);
+}
+.back-to-notes-icon{  
+    margin: 2px;
+    width :15px;
+    height:18px;
+}
+back-to-notes{
+    display: none;
+}
+
+
+/* styles the apply to the private chats container */
+.chats-Ul{
+    height: 80%;
+    width: 100%;
+    list-style-type: none;
+    list-style-position: inside;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+   
+   
+   
+}
+.chat-list{
+    height: 60px;
+    max-width: 300px;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+    margin: 10px;
+}
+.chat-img-div{
+    box-sizing: border-box;
+    width: 10%;
+    height: auto;
+    border-radius: 50%;  
+}
+.chat-img-div>img{
+    width: 100%;
+    height: auto;
+    clip-path: circle();
+    box-sizing: border-box;
+}
+.chat-infor{
+    width: 180px;
+    height: 70%;
+    border-radius: 5px;
+    background-color: #ebf2fa;
+    color: #4e3c30;;
+    margin-left: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.chat-infor>.name{
+    color: #000;
+}
 
 
 /* styles the apply to the favorite books container */
+
 .favorite-booksContainer{
  /*   border: 1px solid #582707 ;  */
     height: 80%;
@@ -563,6 +781,7 @@ h4{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
+
 
 
 @media screen and (max-width:400px){

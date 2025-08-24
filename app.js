@@ -58,6 +58,7 @@ let text
 let closeIcon
 
 const errorEl = document.querySelector('#error-el') 
+
 console.log(errorEl)
 
 function authentication() {
