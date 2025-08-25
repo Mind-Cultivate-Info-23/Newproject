@@ -267,8 +267,8 @@ function createNotes(notes_title,notes_titlesUl, add_notesBtn){
    
 
     notesTitleEl.addEventListener('click',(e)=>{
-    notesUlEl.classList.toggle('hide');
-    add_notesBtn.classList.toggle('hide');
+    notesUlEl.classList.add('hide');
+    add_notesBtn.classList.add('hide');
    // notesHeadingDivEl.classList.toggle('active');
        
     //console.log(notesTitle.textContent)
@@ -284,12 +284,12 @@ function createNotes(notes_title,notes_titlesUl, add_notesBtn){
 
    backToNotesTitlesBtn.addEventListener('click',(e)=>{
         
-        notesUlEl.classList.toggle('hide');
-        add_notesBtn.classList.toggle('hide');
+        notesUlEl.classList.remove('hide');
+        add_notesBtn.classList.remove('hide');
         backToNotesTitlesBtn.classList.remove('active')
 
         notesHeading.textContent = 'Notes Title/s';
-        notesHeading.style.fontSize = '16px'
+        
    });
 
 }
