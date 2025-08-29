@@ -2,14 +2,9 @@
 
 const bookCollectionEl = document.getElementById('collectionDiv');
 const trendingBooksEl = document.getElementById('trendingBooksDiv');
-
-
 const fovoriteEl  = document.querySelectorAll('.fovorite');
 
 const favoriteBookNo = document.getElementById('No-of-favorite-books');
-
-
-
 
 // a function to handle menu display
 function displayMenuContents(){
@@ -80,11 +75,6 @@ function addFavoriteBook(){
 
     fovoriteEl.forEach((element)=>{
         element.addEventListener('click',(e)=>{
-
-           
-
-
-
 
             const bookDiv = element.closest('.book')
     
@@ -190,9 +180,124 @@ function addFavoriteBook(){
 
     });
 }
+addNotes()
+
+// function for notes review
+function addNotes(){
+    const addNotesBtn=document.getElementById('add-notes');
+    const notesDivEl=document.querySelector('.notes-chapter-div');
+    const cancelNotesBtn=document.getElementById('cancel-notes-btn');
+    const addNotesTitleBtn=document.getElementById('create-notes-btn');
+
+    const notesUl=document.getElementById('notesUl');
+    
+    
+    const NotesTitle=document.getElementById('notes-title');
+
+    addNotesBtn.addEventListener('click',()=>{
+        notesDivEl.classList.replace('notes-chapter-div','show-notes-chapter-div')
+        console.log(`${notesDivEl.classList}`);
+    });
+
+    cancelNotesBtn.addEventListener('click',()=>{  
+        notesDivEl.classList.replace('show-notes-chapter-div','notes-chapter-div')
+        console.log(`${notesDivEl}`);
+    });
+
+    addNotesTitleBtn.addEventListener('click',()=>{ 
+        if(NotesTitle.value.trim()===''){
+            alert('Please enter notes title')
+        }
+        else{
+            addNotesTitle()
+        }     
+    });
+
+    NotesTitle.addEventListener('keypress',(e)=>{
+        if(e.key==='Enter' && NotesTitle.value.trim()===''){
+            alert('Please enter notes title')
+        }
+        else if(e.key==='Enter' && NotesTitle.value.trim()!=''){
+            addNotesTitle()   
+        }  
+    });
+
+    function addNotesTitle(){
+         const notesLi=document.createElement('li'); 
+            const notesTitle=document.createElement('span');
+            const removenotesTitleBtn=document.createElement('button');
+            const deleteIcon=document.createElement('img');
+            deleteIcon.src='icons/delete-icon.svg' 
+            deleteIcon.style.width='100%';
+            deleteIcon.style.height='100%';
+            removenotesTitleBtn.appendChild(deleteIcon)          
+            notesTitle.textContent =NotesTitle.value;
+           // removenotesTitleBtn.textContent ='X';
+
+            notesLi.appendChild(notesTitle);
+            notesLi.appendChild(removenotesTitleBtn);
+
+           // let newNotesTitle = notesLi.textContent;
+            notesLi.classList.add('note-title')
+            notesUl.appendChild(notesLi);
+            //empty the title input element
+            NotesTitle.value='';
+
+            removenotesTitleBtn.addEventListener('click',(e)=>{
+                e.target.closest('.note-title').classList.add('hide')
+          });
+            notesDivEl.classList.replace('show-notes-chapter-div','notes-chapter-div') 
+            createNotes(notesTitle, notesUl, addNotesBtn)
+    }
+
+}
+
+// funtion for adding notes after notes title clicked
+function createNotes(notes_title,notes_titlesUl, add_notesBtn){
+    
+    const notesHeadingDivEl=document.getElementById('notes-headingDiv');
+    const notesHeading=document.getElementById('notes-heading');
+    const backToNotesTitlesBtn = document.getElementById('back-to-notes');
+    //backToNotesTitlesBtn.classList.add('back-to-notes')
+    //const addNotesdivEl=document.createElement('div');
+    //addNotesdivEl.classList.add('add-notesDiv')
+
+   let notesTitleEl = notes_title;
+   let notesUlEl = notes_titlesUl;
+   
+
+    notesTitleEl.addEventListener('click',(e)=>{
+    notesUlEl.classList.add('hide');
+    add_notesBtn.classList.add('hide');
+   // notesHeadingDivEl.classList.toggle('active');
+       
+    //console.log(notesTitle.textContent)
+
+       
+        backToNotesTitlesBtn.classList.add('active')
+        notesHeading.textContent = '';
+
+        let currentNotesHeading = notesTitleEl.textContent;
+        notesHeading.append(currentNotesHeading)  
+
+   });
+
+   backToNotesTitlesBtn.addEventListener('click',(e)=>{
+        
+        notesUlEl.classList.remove('hide');
+        add_notesBtn.classList.remove('hide');
+        backToNotesTitlesBtn.classList.remove('active')
+
+        notesHeading.textContent = 'Notes Title/s';
+        
+   });
+
+}
+
+
+
+// function for favorite UI
 addFavoriteBook();
-
-
 
 function updateFavoriteBooks(element, bookDiv){
     let heartIcon1 = element;
@@ -239,9 +344,6 @@ function updateFavoriteBooks(element, bookDiv){
 
                 favoriteBookObject.appendChild(favoritBookImageDiv);
         
-
-             
-
              let favoriteBookInfor = document.createElement('div');
                  favoriteBookInfor.classList.add('fav-book-info') 
                  
