@@ -8,9 +8,6 @@ const favoriteBookNo = document.getElementById('No-of-favorite-books');
 
 // a function to handle menu display
 function displayMenuContents(){
-
-
-    //  A FUNCTION TO DISPLAY THE CONTAINER WHEN CORRESPONDING CONTAINER MENU IS CLICKED
           
         // select menu list items
     const menuList = document.querySelectorAll('.menu-list');
@@ -61,10 +58,83 @@ function displayMenuContents(){
              })
     });
 
-    // A FUNCTION TO KEEP THE DISPLAYED MENU ITEM ACTIVE (by shadowing its border)
-
+    
 }
 displayMenuContents();
+
+
+// a function to handle book collections display
+function bookCollections(){
+          
+        // select book collections
+    const collections = document.querySelectorAll('.collection-image');
+       
+        console.log(collections)
+
+
+    // select all book collections containers
+    const collectionCategories = document.querySelectorAll('.collection-category');
+    
+
+   // console.log(collectionCategories)
+
+    collections.forEach((collection)=>{
+
+            //console.log(collection)
+
+            collection.addEventListener('click',(e)=>{
+
+                // remove all the container when a certain menu item is clicked --- this prevents displaying a menu container on top of the other
+                console.log(collectionCategories)
+
+                collectionCategories.forEach((contegory)=>{
+                    contegory.classList.replace('display-collection-category','collection-category')
+                    console.log(contegory)
+                });
+
+                // display the clicked collection
+                const targetElement = collection.getAttribute('data-target');
+                const targetCollection = document.getElementById(targetElement);
+
+                console.log(targetElement)
+                console.log(targetCollection)
+
+                targetCollection.classList.replace('collection-category','display-collection-category')
+
+                // remove the shadow border from all the menu  items when a particular item is clicked  --- helps to show only one active menu
+               
+                /* 
+                    menuList.forEach((list)=>{
+                        list.classList.remove('active-menu-item')
+                    });
+
+                    // add the shadow border to the active menu 
+                    e.target.classList.add('active-menu-item');
+                */
+            });
+    });
+
+
+        // A BUTTON TO CLOSE MENU ITEM CONTAINER ON CURRENT DISPLAY
+    const closeCollectionBtn = document.querySelectorAll('.close-collectionBtn');
+     
+    closeCollectionBtn.forEach((button)=>{
+             button.addEventListener('click',(e)=>{
+
+                const targetBtn = button.getAttribute('data-target');
+                const targetCollection = document.getElementById(targetBtn);
+                // close the opened menu container
+                targetCollection.classList.replace('display-collection-category','collection-category')
+             })
+    });
+
+}
+bookCollections()
+
+
+
+
+
 
 
 // a function to handle favorite books --- when heart icon on the book is clicked

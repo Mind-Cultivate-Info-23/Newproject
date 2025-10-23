@@ -54,7 +54,8 @@
                     
                     <div class="collection book" id="sciences">
                         <h4>Science</h4>
-                        <img class="book-image" id="book-image" src="images/science.png" alt="sce">
+                        <img class="book-image collection-image sciences" data-target="sciences-collection" id="book-image" src="images/science.png" alt="sce">
+
 
                         <div class="book-info" id="book-info">
 
@@ -76,7 +77,8 @@
 
                     <div class="collection book" id="psychology">
                         <h4>Psychology</h4>
-                        <img class="book-image" id="book-image" src="images/psych.png" alt="sce">
+                        <img class="book-image collection-image psychology" data-target="psychology-collection"  id="book-image" src="images/psych.png" alt="sce">
+                       <!-- <img class="book-image sciences" data-target="sciences" id="book-image" src="images/science.png" alt="sce"> -->
 
                         <div class="book-info" id="book-info">
 
@@ -95,9 +97,30 @@
 
                     </div>
 
-                    <div class="collection book" id="sciences">
-                        <h4>Science</h4>
-                        <img class="book-image" id="book-image" src="images/science.png" alt="sce">
+                    <div class="collection book" id="romance">
+                        <h4>Romance</h4>
+                        <img class="book-image collection-image romance" data-target="romance-collection"  id="book-image" src="images/psych.png" alt="sce">
+                        
+                        <div class="book-info" id="book-info">
+
+                            <div class="authorNameDiv" >
+                            <label class="bookTitle">The systems</label>
+                            <label class="authorName">Brian Jack</label>
+
+                            </div>
+
+                            <div  class="viewDiv">
+                                <img class="fovorite" src="icons/heart.png">
+                                <button class="view-btnBtn">view</button> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="collection book" id="poetry" >
+                        <h4>Poetry</h4>
+                        <img class="book-image collection-image poetry" data-target="poetry-collection"  id="book-image" src="images/psych.png" alt="sce">
 
                         <div class="book-info" id="book-info">
 
@@ -115,29 +138,10 @@
                         </div>
 
                     </div>
-                    <div class="collection book" id="techonology" >
-                        <h4>Technology</h4>
-                        <img class="book-image" id="book-image" src="images/tech.png" alt="sce">
-
-                        <div class="book-info" id="book-info">
-
-                            <div class="authorNameDiv" >
-                            <label class="bookTitle">The systems</label>
-                            <label class="authorName">Brian Jack</label>
-
-                            </div>
-
-                            <div  class="viewDiv">
-                                <img class="fovorite" src="icons/heart.png">
-                                <button class="view-btnBtn">view</button> 
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="collection book" id="history">
-                        <h4>History</h4>
-                        <img class="book-image" id="book-image" src="images/history.png" alt="sce">
+                    <div class="collection book" id="mistery">
+                        <h4>Mystery</h4>
+                        <img class="book-image collection-image mistery" data-target="mistery-collection"  id="book-image" src="images/psych.png" alt="sce">
+                      <!--  <img class="book-image" id="book-image" src="images/history.png" alt="sce">  -->
 
                         <div class="book-info" id="book-info">
 
@@ -157,9 +161,9 @@
 
                     </div>
 
-                    <div class="collection book" id="history">
-                        <h4>History</h4>
-                        <img class="book-image" id="book-image" src="images/history.png" alt="sce">
+                    <div class="collection book" id="african-stories">
+                        <h4>African Stories</h4>
+                        <img class="book-image collection-image african-stories" data-target="african-stories-collection"  id="book-image" src="images/psych.png" alt="sce">
 
                         <div class="book-info" id="book-info">
 
@@ -179,9 +183,9 @@
 
                     </div>
 
-                    <div class="collection book" id="history">
-                        <h4>History</h4>
-                        <img class="book-image" id="book-image" src="images/history.png" alt="sce">
+                    <div class="collection book" id="religion">
+                        <h4>Religion</h4>
+                        <img class="book-image collection-image religion" data-target="religion-collection"  id="book-image" src="images/psych.png" alt="sce">
 
                         <div class="book-info" id="book-info">
 
@@ -210,6 +214,63 @@
 
             </section>
 
+            <!--Book collection category -->
+
+                <div class="collection-category" id="sciences-collection">
+                    <div class="collection-category-header">
+                        <h4>This is Scinces category</h4>
+                        <button class="close-collectionBtn" data-target="sciences-collection" ><img src="icons/close-icon.png"></button>
+                    </div>
+  
+                </div>
+
+                <div class="collection-category" id="psychology-collection">
+                    <div class="collection-category-header">
+                        <h4>This is psychology category</h4>
+                        <button class="close-collectionBtn" data-target="psychology-collection" ><img src="icons/close-icon.png"></button>
+                    </div>
+  
+                </div>
+
+                <div class="collection-category" id="romance-collection">
+                    <div class="collection-category-header">
+                        <h4>This is romance category</h4>
+                        <button class="close-collectionBtn" data-target="romance-collection" ><img src="icons/close-icon.png"></button>
+                    </div>
+  
+                </div>
+            
+                <div class="collection-category" id="poetry-collection">
+                    <div class="collection-category-header">
+                        <h4>This is poetry category</h4>
+                        <button class="close-collectionBtn" data-target="poetry-collection" ><img src="icons/close-icon.png"></button>
+                    </div>
+  
+                </div>
+
+                <div class="collection-category" id="mistery-collection">
+                    <div class="collection-category-header">
+                        <h4>This is mistery category</h4>
+                        <button class="close-collectionBtn" data-target="mistery-collection" ><img src="icons/close-icon.png"></button>
+                    </div>
+  
+                </div>
+
+                <div class="collection-category" id="african-stories-collection">
+                    <div class="collection-category-header">
+                        <h4>This is african stories category</h4>
+                        <button class="close-collectionBtn" data-target="african-stories-collection" ><img src="icons/close-icon.png"></button>
+                    </div>
+  
+                </div>
+
+                <div class="collection-category" id="religion-collection">
+                    <div class="collection-category-header">
+                        <h4>This is religious category</h4>
+                        <button class="close-collectionBtn" data-target="religion-collection" ><img src="icons/close-icon.png"></button>
+                    </div>
+  
+                </div>
 
 
 
@@ -347,7 +408,7 @@
         <side class="menu-area" id="menu-area">
             <ul>
                 <li class="menu-list  my-library" data-target="my-library"><img src="icons/library.png"> My Library</li>
-            <li class="menu-list note-review" data-target="note-review"><img src="icons/notes.png">Notes</li>
+                <li class="menu-list note-review" data-target="note-review"><img src="icons/notes.png">Notes</li>
                 <li class="menu-list discussions" data-target="discussions"><img src="icons/groupChat.png">Discussions</li>
                 <li class="menu-list private-chat" data-target="private-chat"><img src="icons/chat-icon.png">Private Chat</li>
              <!--   <li class="menu-list new-records" data-target="new-records"><img src="icons/notes.png">New Records</li> -->

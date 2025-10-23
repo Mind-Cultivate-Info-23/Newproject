@@ -226,6 +226,8 @@ main{
 
    padding: 10px;
    height: h;
+
+   position: relative;
 }
 .main-title{
     text-align: center;
@@ -238,8 +240,7 @@ main{
     display: grid;
     grid-template-rows: 30px auto 25px;
     background-color: #fff;
-    
-    
+       
 }
 .book-collection-section>h3, .trending-books-section>h3{
     font-size: 16px;
@@ -258,10 +259,8 @@ main{
     align-items: flex-start;
     overflow-x: hidden;
     white-space: nowrap;
-
-
-
 }
+
 .collection, .trending-book{
    
     min-width: 110px;
@@ -294,6 +293,37 @@ main{
     transform: scale(1.05);
     border-radius: 3px;
 }
+.collection-category-header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.collection-category-header>h4{
+    transform: translateX(50%);
+    color: red;
+}
+.collection-category{
+    display: none;
+}
+
+.display-collection-category{
+    display: block;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: #4e3c30;
+    z-index: 10;
+}
+
+
+
+
+
+
+
 .trending-book>img{
     width: 100%;
     height: 75%;
@@ -433,7 +463,7 @@ footer{
 }
 
 /* a button to close the favorite books container once opened */
-.close-menuBtn{
+.close-menuBtn, .close-collectionBtn{
     position: absolute;
     top: 2px;
     right: 2px;
@@ -444,7 +474,7 @@ footer{
     
    
 }
-.close-menuBtn:hover{
+.close-menuBtn:hover, .close-collectionBtn:hover{
 filter: invert(16%) sepia(100%) saturate(7481%)  hue-rotate(342deg) brightness(92%) contrast(1015);
 }
 /* styles that apply to note review container*/
