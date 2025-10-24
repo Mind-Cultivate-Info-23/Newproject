@@ -258,6 +258,11 @@ function createNotes(notes_title,notes_titlesUl, add_notesBtn){
     const notesHeadingDivEl=document.getElementById('notes-headingDiv');
     const notesHeading=document.getElementById('notes-heading');
     const backToNotesTitlesBtn = document.getElementById('back-to-notes');
+    
+    const notesAreaDivEl =document.getElementById('notes-areaDiv');
+    const editNotesBtn = document.getElementById('edit-notes');
+    const notesTextArea =document.getElementById('notes-text-area');
+    const saveNotesBtn =document.getElementById('save-notes');
     //backToNotesTitlesBtn.classList.add('back-to-notes')
     //const addNotesdivEl=document.createElement('div');
     //addNotesdivEl.classList.add('add-notesDiv')
@@ -265,7 +270,6 @@ function createNotes(notes_title,notes_titlesUl, add_notesBtn){
    let notesTitleEl = notes_title;
    let notesUlEl = notes_titlesUl;
    
-
     notesTitleEl.addEventListener('click',(e)=>{
     notesUlEl.classList.add('hide');
     add_notesBtn.classList.add('hide');
@@ -275,11 +279,13 @@ function createNotes(notes_title,notes_titlesUl, add_notesBtn){
 
        
         backToNotesTitlesBtn.classList.add('active')
+         editNotesBtn.classList.add('active')
         notesHeading.textContent = '';
 
         let currentNotesHeading = notesTitleEl.textContent;
         notesHeading.append(currentNotesHeading)  
 
+        editNotes()
    });
 
    backToNotesTitlesBtn.addEventListener('click',(e)=>{
@@ -287,10 +293,42 @@ function createNotes(notes_title,notes_titlesUl, add_notesBtn){
         notesUlEl.classList.remove('hide');
         add_notesBtn.classList.remove('hide');
         backToNotesTitlesBtn.classList.remove('active')
+        editNotesBtn.classList.remove('active')
 
+        notesAreaDivEl.classList.remove('active')
         notesHeading.textContent = 'Notes Title/s';
         
    });
+
+      function editNotes(){
+       
+      editNotesBtn.addEventListener('click',(e)=>{
+          console.log(`edit notes button clicked`)
+          console.log(`${notesAreaDivEl} and its class list ${notesAreaDivEl.classList}`)
+          notesAreaDivEl.classList.add('active')
+         // notesTextArea.classList.add('active')
+
+          saveNotesBtn.classList.remove('hide')
+
+        /*  var buttNl = document.createElement('button')
+          buttNl.textContent= 'See'
+          buttNl.classList.add('active-button')
+          notesAreaDivEl.append(buttNl)*/
+      })
+
+      saveNotesBtn.addEventListener('click',(e)=>{
+       
+        const addedNotes = document.getElementById('notes-text-area');
+       // notesAreaDivEl.classList.add('active')
+        notesTextArea.classList.remove('active')
+        saveNotesBtn.classList.add('hide')
+       let addedNotesP = document.createElement('p')
+       addedNotesP.textContent = addedNotes.value
+       notesAreaDivEl.append(addedNotesP)
+        console.log(`${addedNotes.value} ${addedNotesP.textContent}`)
+    })
+   }
+
 
 }
 
