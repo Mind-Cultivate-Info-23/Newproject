@@ -303,15 +303,27 @@ main{
 /* STYLING BOOK COLLECTION CATEGORIES */
 .collection-category-header{
     width: 100%;
-    height: 5%;
+    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  
+    align-items: center;
+    background-color: hsla(40, 47%, 21%, 0.5);
+    
+    
+    box-sizing: border-box;
 }
 .collection-category-header>h4{
-    transform: translateX(50%);
-    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+.collection-category-header>button{
+    background: transparent;
+    border: none;
 }
 
 .collection-category{
@@ -327,16 +339,17 @@ main{
     width: 100%;
     height: 100%;
     background-color: #4e3c30;
+   
     z-index: 10;
 }
 .category{
     background:linear-gradient(135deg, #eee4da, #1f170f);
     width: 100%;
-    height: 95%;
+    
 
    
 
-    margin-top: 20px;
+    margin: 0;
     padding: 10px;
     box-sizing: border-box;
 
@@ -631,7 +644,7 @@ footer{
 }
 
 /* a button to close the favorite books container once opened */
-.close-menuBtn, .close-collectionBtn{
+.close-menuBtn{
     position: absolute;
     top: 2px;
     right: 2px;
