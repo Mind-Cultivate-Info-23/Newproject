@@ -63,80 +63,6 @@ function displayMenuContents(){
 displayMenuContents();
 
 
-// a function to handle book collections display
-function bookCollections(){
-          
-        // select book collections
-    const collections = document.querySelectorAll('.collection-image');
-       
-        console.log(collections)
-
-
-    // select all book collections containers
-    const collectionCategories = document.querySelectorAll('.collection-category');
-    
-
-   // console.log(collectionCategories)
-
-    collections.forEach((collection)=>{
-
-            //console.log(collection)
-
-            collection.addEventListener('click',(e)=>{
-
-                // remove all the container when a certain menu item is clicked --- this prevents displaying a menu container on top of the other
-                console.log(collectionCategories)
-
-                collectionCategories.forEach((contegory)=>{
-                    contegory.classList.replace('display-collection-category','collection-category')
-                    console.log(contegory)
-                });
-
-                // display the clicked collection
-                const targetElement = collection.getAttribute('data-target');
-                const targetCollection = document.getElementById(targetElement);
-
-                console.log(targetElement)
-                console.log(targetCollection)
-
-                targetCollection.classList.replace('collection-category','display-collection-category')
-
-                // remove the shadow border from all the menu  items when a particular item is clicked  --- helps to show only one active menu
-               
-                /* 
-                    menuList.forEach((list)=>{
-                        list.classList.remove('active-menu-item')
-                    });
-
-                    // add the shadow border to the active menu 
-                    e.target.classList.add('active-menu-item');
-                */
-            });
-    });
-
-
-        // A BUTTON TO CLOSE MENU ITEM CONTAINER ON CURRENT DISPLAY
-    const closeCollectionBtn = document.querySelectorAll('.close-collectionBtn');
-     
-    closeCollectionBtn.forEach((button)=>{
-             button.addEventListener('click',(e)=>{
-
-                const targetBtn = button.getAttribute('data-target');
-                const targetCollection = document.getElementById(targetBtn);
-                // close the opened menu container
-                targetCollection.classList.replace('display-collection-category','collection-category')
-             })
-    });
-
-}
-bookCollections()
-
-
-
-
-
-
-
 // a function to handle favorite books --- when heart icon on the book is clicked
 let favoriteBooks =[];
 function addFavoriteBook(){
@@ -610,3 +536,193 @@ function scrollBookCollections(){
 }
 scrollBookCollections();
 
+
+
+
+// Code for grabbing from IndexedDB
+
+let books = []
+console.log(books)
+
+function getCategory(category) {
+    if (db) {
+
+        console.log("Hello!")
+
+        const getTX = db.transaction("books", "readonly")
+        const store = getTX.objectStore("books")
+        const categoryIndex = store.index("book_category")
+
+        const categoryQuery = categoryIndex.getAll([`${category}`])
+
+        categoryQuery.onerror = function() {
+            console.log("Error getting category")
+        }
+
+        categoryQuery.onsuccess = function() {
+            const retreivedCategory = categoryQuery.result
+            console.log(retreivedCategory)
+            retreivedCategory.forEach(book => {
+                const eachBook = book
+                books.push(eachBook)
+                // console.log(books)
+            })
+            console.log(books)
+            const addingToLocalStorage = localStorage.setItem("books", JSON.stringify(books))
+            books = []
+            console.log(books)
+        }
+     }
+}
+
+
+// Code to render each book from the IndexedDB as per category
+
+const businessBooks = document.querySelector("#business-books")
+// select book collections
+    const collections = document.querySelectorAll('.collection-image');
+       
+        console.log(collections)
+
+
+    // select all book collections containers
+    const collectionCategories = document.querySelector('.collection-category');
+    
+
+   console.log(collectionCategories)
+
+function renderBooks(booksData) {
+    const booksdata = JSON.parse(localStorage.getItem("books"))
+    localStorage.clear()
+    console.log(booksdata)
+    booksData.forEach(bookData => {
+        const categorisedBook = document.createElement("div")
+        categorisedBook.setAttribute("class", "categorised-book")
+        categorisedBook.setAttribute("id", "categorised-book")
+        console.log(categorisedBook)
+
+        const cBookImg = document.createElement("div")
+        cBookImg.setAttribute("class", "cBook-img")
+        // console.log(cBookImg)
+
+        categorisedBook.appendChild(cBookImg)
+
+        const cBookImage = new Image()
+        cBookImage.setAttribute("class", "cBook-image")
+        cBookImage.src = bookData.pic_URL
+        // console.log(cBookImage)
+
+        cBookImg.appendChild(cBookImage)
+
+        const cBookInfor = document.createElement("div")
+        cBookInfor.setAttribute("class", "cBook-infor")
+
+        categorisedBook.appendChild(cBookInfor)
+
+        const cBookTitle = document.createElement("strong")
+        cBookTitle.setAttribute("class", "cBook-title")
+        cBookTitle.textContent = bookData.title
+        cBookInfor.appendChild(cBookTitle)
+
+        const cBookAuthor = document.createElement("p")
+        cBookAuthor.setAttribute("class", "cBook-author")
+        cBookAuthor.textContent = bookData.author
+        cBookInfor.appendChild(cBookAuthor)
+
+        const pRating = document.createElement("div")
+        pRating.setAttribute("class", "p-rating")
+        pRating.textContent = `Rating: ${bookData.rating}`
+        cBookInfor.appendChild(pRating)
+
+        const pYear = document.createElement("div")
+        pYear.setAttribute("class", "p-year")
+        const p = document.createElement("p")
+        p.textContent = `Published:`
+        pYear.appendChild(p)
+        const year = document.createElement("time")
+        year.setAttribute("class", "cBook-pYear")
+        year.textContent = bookData.published_year
+        cBookInfor.appendChild(pYear).appendChild(year)
+
+        businessBooks.appendChild(categorisedBook)
+
+    })
+}
+
+// a function to handle book collections display
+function bookCollections(){
+          
+//         // select book collections
+//     const collections = document.querySelectorAll('.collection-image');
+       
+//         console.log(collections)
+
+
+//     // select all book collections containers
+//     const collectionCategories = document.querySelectorAll('.collection-category');
+    
+
+//    console.log(collectionCategories)
+
+    collections.forEach((collection)=>{
+
+            //console.log(collection)
+
+            collection.addEventListener('click',(e)=>{
+
+                // remove all the container when a certain menu item is clicked --- this prevents displaying a menu container on top of the other
+                console.log(collectionCategories)
+
+                // collectionCategories.forEach((contegory)=>{
+                //     contegory.classList.replace('display-collection-category','collection-category')
+                //     console.log(contegory)
+                // });
+
+                // display the clicked collection
+                const targetElement = collection.getAttribute('data-target');
+                // const targetCollection = document.getElementById(targetElement);
+
+                console.log(targetElement)
+                // console.log(targetCollection)
+
+                getCategory(targetElement)
+                let bookData = JSON.parse(localStorage.getItem("books"))
+                console.log(bookData)
+                renderBooks(bookData)
+                bookData = []
+                console.log(bookData)
+
+                
+                collectionCategories.classList.replace('collection-category','display-collection-category')
+                // targetCollection.classList.replace('collection-category','display-collection-category')
+
+                // remove the shadow border from all the menu  items when a particular item is clicked  --- helps to show only one active menu
+               
+                /* 
+                    menuList.forEach((list)=>{
+                        list.classList.remove('active-menu-item')
+                    });
+
+                    // add the shadow border to the active menu 
+                    e.target.classList.add('active-menu-item');
+                */
+            });
+    });
+
+
+        // A BUTTON TO CLOSE MENU ITEM CONTAINER ON CURRENT DISPLAY
+    const closeCollectionBtn = document.querySelectorAll('.close-collectionBtn');
+     
+    closeCollectionBtn.forEach((button)=>{
+             button.addEventListener('click',(e)=>{
+                localStorage.clear()
+                window.location.reload()
+                const targetBtn = button.getAttribute('data-target');
+                const targetCollection = document.getElementById(targetBtn);
+                // close the opened menu container
+                targetCollection.classList.replace('display-collection-category','collection-category')
+             })
+    });
+
+}
+bookCollections()
