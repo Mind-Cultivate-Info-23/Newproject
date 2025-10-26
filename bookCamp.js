@@ -562,15 +562,15 @@ function getCategory(category) {
         categoryQuery.onsuccess = function() {
             const retreivedCategory = categoryQuery.result
             console.log(retreivedCategory)
-            retreivedCategory.forEach(book => {
-                const eachBook = book
-                books.push(eachBook)
-                // console.log(books)
-            })
-            console.log(books)
-            const addingToLocalStorage = localStorage.setItem("books", JSON.stringify(books))
-            books = []
-            console.log(books)
+            // retreivedCategory.forEach(book => {
+            //     const eachBook = book
+            //     books.push(eachBook)
+            //     // console.log(books)
+            // })
+            // console.log(books)
+            // const addingToLocalStorage = localStorage.setItem("books", JSON.stringify(books))
+            // books = []
+            // console.log(books)
         }
      }
 }

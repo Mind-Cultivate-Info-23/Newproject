@@ -260,7 +260,7 @@ window.webkitindexedDB;
 let db
 
 function createDB() {
-    const request = indexedDB.open("books_DataB", 1)
+    const request = indexedDB.open("book_DataB", 1)
 
     request.onerror = function() {
         console.log("Error on opening DB")
