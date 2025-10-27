@@ -86,7 +86,7 @@ function bookCollections(){
 
                 // remove all the container when a certain menu item is clicked --- this prevents displaying a menu container on top of the other
                 console.log(collectionCategories)
-
+                
                 collectionCategories.forEach((contegory)=>{
                     contegory.classList.replace('display-collection-category','collection-category')
                     console.log(contegory)
