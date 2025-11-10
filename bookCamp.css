@@ -58,22 +58,7 @@ header{
    
    
 }
-.searchBtn{
-    height: 40px;
-    
-    
-    border: none;
-    border-radius: 20px;
-    background: linear-gradient(90deg, #582707, #000);
-    color: #fff;
-    font-family: sans-serif;
 
-    position: absolute;
-    right: 0;
-}
-.searchBtn:hover{
-    opacity: 0.8;
-}
 .search{
     height: 40px;
     width: 100%;
@@ -88,6 +73,105 @@ header{
 .search:focus{
     outline: none;
 }
+
+.searchBtn{
+     border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    transform: translate(-30px , -10px); 
+}
+.searchBtn:hover{
+    opacity: 0.8;
+}
+
+#search::-webkit-search-cancel-button, #search::-ms-clear{
+    appearance: none;
+    display: none;
+}
+.search-results{
+    display: none;
+}
+.search-results.active{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px 30px;
+    background-color: #f1efef;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    
+    box-sizing: border-box;
+   
+    z-index: 10;
+}
+.search-results::-webkit-scrollbar{
+    background-color: #fff;
+    width: 2px;
+}
+.results{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 10px;
+    min-height: 80px;
+    background-color: #fff;
+}
+.results>.read-btn{
+    height: 40px;
+    width: 60px;
+    border: none;
+
+}
+.results>.read-btn:hover{
+   background-color: #eeecec;
+
+}
+.book-content{
+    height: 100%;
+    width: 80%;
+   
+    
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+   
+    padding: 10px 0;
+
+}
+.book-content figure{
+    width: 70px;
+    
+}
+.book-content>figure img{
+    height: 100%;
+    width: 100%;
+    
+}
+.book-content> .s-book-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.book-content p{ 
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif;
+    font-size: 0.7rem;
+}
+
+@media screen and (max-width:700px){
+    .results{
+       
+    }
+}
+
+
+
+
 .logoDiv{ 
     width: 18%;
     padding: 10px;

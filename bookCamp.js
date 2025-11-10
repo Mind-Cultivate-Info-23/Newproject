@@ -610,3 +610,37 @@ function scrollBookCollections(){
 }
 scrollBookCollections();
 
+
+function Search(){
+    const searchBtn =document.querySelector('.searchBtn')
+    const searchResults = document.querySelector('.search-results')
+    const readBtns=document.querySelectorAll('.read-btn')
+    const searchInput =document.querySelector('#search')
+
+    searchBtn.addEventListener('click',()=>{
+         if(searchInput.value.trim()===''){
+            alert('Please enter some text')
+        }
+        else{
+            searchResults.classList.add('active')
+        }
+        
+        
+    })
+
+    readBtns.forEach((button)=>{
+      /*  let searchedBook=button.closest('#book-content') */
+        searchResults.addEventListener('click',()=>{
+            
+             button.addEventListener('click',(e)=>{
+              searchResults.classList.remove('active') 
+           
+        })
+        })
+
+       
+        
+    })
+}
+Search()
+
